@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Footer from './components/Footer';
+
+import Navbar from './components/Navbar';
 function App() {
+ 
   return (
-    <>
-    <h1>Welcome to Quran App
-    </h1>
-    </>
+
+  <>
+     <Navbar/> 
+     <Footer/>
+    
+  </>
   );
 }
 
