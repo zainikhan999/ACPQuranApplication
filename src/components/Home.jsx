@@ -73,7 +73,7 @@ export default function Home() {
         <Section
           heading="Learn, Recite, and Memorize the Quran with Expert Guidance"
           subheading="Join a community dedicated to spreading knowledge."
-          description="At [Your Academy Name], we offer a comprehensive, personalized 
+          description="At Quran Bliss, we offer a comprehensive, personalized 
         learning experience to help students of all ages understand and memorize 
         the Quran. Our certified and highly experienced teachers are committed to 
         making Quranic education accessible, engaging, and effective. Learn 
