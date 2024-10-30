@@ -46,7 +46,7 @@ function Dashboard() {
 
       {/* Main content area */}
       <div className={`flex-1 p-6 transition-all ${sidebarOpen ? 'ml-64' : 'ml-20'}`}>
-        <h1 className="text-headings font-semibold text-2xl mb-4">Welcome to your Dashboard</h1>
+        <h1 className="text-headings font-semibold text-2xl mb-4 ">Welcome to your Dashboard</h1>
         
         {/* Conditional rendering based on active section */}
         {activeSection === 'dashboard' && (

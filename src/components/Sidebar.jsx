@@ -2,9 +2,9 @@ import React from 'react';
 
 function Sidebar({ isOpen, onToggle, onLogout, onSelectSection }) {
   return (
-    <div className={`bg-navigationBar text-bodyText h-full fixed top-0 left-0 transition-all ${isOpen ? 'w-64' : 'w-20'} border 
-     border-iconsAndBorders  rounded-lg    `}>
-      <button onClick={onToggle} className="p-4 text-iconsAndBorders hover:bg-footerBackground">
+    <div className={`bg-navigationBar text-bodyText h-screen fixed top-0 left-0 transition-all ${isOpen ? 'w-64' : 'w-20'} border 
+     border-iconsAndBorders rounded-lg`}>
+      <button onClick={onToggle} className="p-3 text-iconsAndBorders hover:bg-footerBackground">
         {isOpen ? 'Collapse' : 'Expand'}
       </button>
       <nav className="mt-8">
