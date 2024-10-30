@@ -31,7 +31,7 @@ export default function SignUp() {
       <h1>SignUp</h1>
     </Herosection>
     <div className="flex items-center justify-center h-screen bg-background">
-      <div className="max-w-md w-full p-8 border border-iconsAndBorders rounded-lg shadow-lg bg-white">
+      <div className="max-w-md w-full p-8 border border-iconsAndBorders rounded-lg shadow-lg ">
         <h1 className="text-3xl font-bold text-headings text-center mb-8">Welcome User!</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
