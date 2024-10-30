@@ -19,7 +19,7 @@ export default function Navbar() {
           <ul>
             <div className='flex flex-row gap-7'>
               <li className='text-[#FFD54F]'><Link to="/">Home</Link></li>
-              <li className='text-[#FFD54F]'><Link to="/Course">Course</Link></li>
+              <li className='text-[#FFD54F]'><Link to="/Course">Courses</Link></li>
               <li className='text-[#FFD54F]'><Link to="/SignUp">SignUp</Link></li>
               <li className='text-[#FFD54F]'><Link to="/Login">Login</Link></li>
             </div>

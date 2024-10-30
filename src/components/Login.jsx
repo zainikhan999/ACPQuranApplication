@@ -23,7 +23,7 @@ export default function Login() {
      <Herosection imageUrl="/HomePage.png" height="h-[200px]">
       <h1>Login</h1>
     </Herosection>
-    <div className="flex items-start justify-center h-screen bg-background p-9">
+    <div className="flex items-start justify-center h-screen bg-background p-9 mt-9">
       <div className="max-w-md w-full p-8 border border-iconsAndBorders rounded-lg shadow-lg bg-white">
         <h1 className="text-3xl font-bold text-headings text-center mb-8">Welcome Back User!</h1>
         <form onSubmit={handleLogin} className="space-y-6">
