@@ -4,23 +4,23 @@ import CourseCard from './CourseCard';
 const courses = [
   {
     id: 1,
-    title: "Course 1",
-    description: "Tajweed Course",
-    thumbnail: "https://via.placeholder.com/150",
+    title: "Tajweed Course",
+    description: "Tajweed Course is a 6 months designed specifically , once you buy this course you will be added to our whatsapp group.Mode of classes will be online via Zoom",
+    thumbnail: "./OpenQuran.jpg",
     price: 100,
   },
   {
     id: 2,
-    title: "Course 2",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "An advanced course",
+    title: "Tasfeer",
+    thumbnail: "./Quran.jpg",
+    description: "The course is of 1 year Complete 30 chapters Tafseer will be delivered in the whatsapp groups students will be intended to attempt Quizzes related to it at the end the final test will be given.",
     price: 100,
   },
   {
     id: 2,
-    title: "Course 3",
-    thumbnail: "https://via.placeholder.com/150",
-    description: "Tafseer Course",
+    title: "Hifz",
+    thumbnail: "./Mosque.jpg",
+    description: "Memorize Quran at your own pace , the scholar will be available via zoom and will listen the Qirat, at the end a test will be condcuted to measure how much the student is eilgble to be called Hafiza ",
     price: 100,
   },
 ];
