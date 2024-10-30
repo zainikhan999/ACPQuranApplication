@@ -38,7 +38,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[#FFFFFF]"
           >
-            <FaWhatsapp size={24} '/>
+            <FaWhatsapp size={24} />
             <span>+123 456 7890</span>
           </a>
           
