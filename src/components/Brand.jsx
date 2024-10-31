@@ -3,8 +3,8 @@ import React from 'react';
 
 function Brand() {
   return (
-    <div className="brand">
-      <h1>Quran App</h1>
+    <div className="brand w-1/2 ml-3">
+      <h1 className='text-white'>Quran Bliss</h1>
     </div>
   );
 }
