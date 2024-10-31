@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
-import Brand from './Brand'; // Ensure this path is correct
+import Brand from './Brand'; 
 import AdminDashboard from './AdminDashboard';
 import AddStudent from './AddStudent';
 import DeleteStudent from './DeleteStudent';
@@ -19,23 +19,21 @@ export default function Navbar() {
         <nav className='flex justify-between items-center bg-[#004D40] w-full h-28 sticky top-0 z-10 p-12'>
           <Brand />
           <ul className='flex flex-row gap-7'>
-          <li className='text-[#FFD54F]'><Link to="">Home</Link></li>
-       
+            <li className='text-[#FFD54F]'><Link to="/">Home</Link></li>
             <li className='text-[#FFD54F]'><Link to="/AboutUs">About Us</Link></li>
-            <li className='text-[#FFD54F]'><Link to="">Courses</Link></li>   
+            <li className='text-[#FFD54F]'><Link to="#">Courses</Link></li>   
             <li className='text-[#FFD54F]'><Link to="/ContactUs">Contact Us</Link></li>
-
-            <li className='text-[#FFD54F]'><Link to="">SignUp</Link></li>
-
-            <li className='text-[#FFD54F]'><Link to="/">Login</Link></li>
+            <li className='text-[#FFD54F]'><Link to="#">SignUp</Link></li>
+            <li className='text-[#FFD54F]'><Link to="/Login">Login</Link></li>
           </ul>
         </nav>
-      )} 
+      )}
 
-      <Routes className='flex flex-row justify-center'>
+      <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/AdminDashboard" element={<AdminDashboard />}>
           <Route path="add" element={<AddStudent />} />
           <Route path="delete" element={<DeleteStudent />} />

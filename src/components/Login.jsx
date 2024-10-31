@@ -9,7 +9,7 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
     // Hardcoded credentials
-    if (username === 'zk_123' && password === '123456789') {
+    if (username === 'Gul' && password === '1234') {
       navigate('/AdminDashboard'); // Redirect to Admin Dashboard
     } else if (username === 'user123' && password === 'userpass') {
       navigate('/Dashboard'); // Redirect to User Dashboard

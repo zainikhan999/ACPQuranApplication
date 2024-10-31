@@ -1,54 +1,47 @@
-import React from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Side from './Side';
+import AddStudent from './AddStudent'; // Import your components
+import DeleteStudent from './DeleteStudent';
+import UpdateStudent from './UpdateStudent';
+import ViewStudents from './ViewStudents';
 import HeroSection from './HeroSection';
-
+// import Login from './Login'
 function AdminDashboard() {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [activeSection, setActiveSection] = useState('add'); // Default to Add Student
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Logic to handle logout (clear user session, etc.)
-    navigate('/'); // Redirect to Login page
+    navigate('/Login');
   };
 
   return (
-    <div className="relative h-screen">
-      {/* Hero Section */}
-      <HeroSection imageUrl="/HomePage.png" height="h-[100px]">
-        <h1 className="text-center text-white text-4xl font-bold">Admin Dashboard</h1>
+    <>
+      <HeroSection imageUrl="/Home.png" height="h-[150px]">
+        <h1>Admin Dashboard</h1>
       </HeroSection>
-
-      <div className="flex h-screen">
+      <div className="flex min-h-screen bg-background">
         {/* Sidebar */}
-        <div className="bg-[#0C4A1F] text-[#FFEB3B] h-full fixed top-0 left-0 w-64 border border-[#808080] rounded-lg p-8">
-          <nav>
-            <Link to="add" className="block p-4 w-full text-left hover:bg-[#0E5B24] text-[#FFEB3B] text-sm">
-              Add Student
-            </Link>
-            <Link to="delete" className="block p-4 w-full text-left hover:bg-[#0E5B24] text-[#FFEB3B] text-sm">
-              Delete Student
-            </Link>
-            <Link to="update" className="block p-4 w-full text-left hover:bg-[#0E5B24] text-[#FFEB3B] text-sm">
-              Update Student
-            </Link>
-            <Link to="view" className="block p-4 w-full text-left hover:bg-[#0E5B24] text-[#FFEB3B] text-sm">
-              View Students
-            </Link>
-          </nav>
-          {/* Logout Button */}
-          <button
-            onClick={handleLogout}
-            className="mt-4 w-full p-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded"
-          >
-            Logout
-          </button>
-        </div>
+        <Side
+          isOpen={sidebarOpen} 
+          onToggle={() => setSidebarOpen(!sidebarOpen)} 
+          onLogout={handleLogout} 
+          onSelectSection={setActiveSection} // Update active section
+        />
 
-        {/* Main Content */}
-        <div className="ml-64 p-8 w-full bg-[#0C4A1F] text-[#FFEB3B]">
-          <Outlet />
+        {/* Main content area */}
+        <div className={`flex-1 p-6 transition-all ${sidebarOpen ? 'ml-64' : 'ml-20'}`}>
+          <h1 className="text-headings font-semibold text-2xl mb-4">Welcome to the Admin Dashboard</h1>
+          
+          {/* Conditional rendering based on active section */}
+          {activeSection === 'add' && <AddStudent />}
+          {activeSection === 'delete' && <DeleteStudent />}
+          {activeSection === 'update' && <UpdateStudent />}
+          {activeSection === 'view' && <ViewStudents />}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
