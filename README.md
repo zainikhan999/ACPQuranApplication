@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+﻿# ACPQuranApplication
+ MERN Stack appication where the user can register for courses related to Quran , the website has 2 main modules admin and user 
+ User will be registering the courses .
+ Admin will be managing the whole website.
+ Design for the webiste pages are attached below:
+![image](https://github.com/user-attachments/assets/62002377-b6f6-428b-a410-cc4bfb6c6165)
+
+>>>>>>> fffd594a4ed7d45d09a2e4aaa014133093419905

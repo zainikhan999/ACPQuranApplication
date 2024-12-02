@@ -13,9 +13,7 @@ function CourseCard({ course, onPurchase }) {
       >
         Buy Now
       </button>
-      <button className="mt-2 w-full bg-secondaryButton text-navigationBar font-semibold py-2 rounded">
-        View Details
-      </button>
+      
     </div>
   );
 }
