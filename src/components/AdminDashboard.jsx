@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Side from './Side';
-import AddStudent from './AddStudent'; // Import your components
+import AddStudent from './AddStudent'; 
 import DeleteStudent from './DeleteStudent';
 import UpdateStudent from './UpdateStudent';
 import ViewStudents from './ViewStudents';
+import ViewMessages from './ViewMessages'; // Import ViewMessages
 import HeroSection from './HeroSection';
-// import Login from './Login'
+
 function AdminDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeSection, setActiveSection] = useState('add'); // Default to Add Student
@@ -39,6 +40,7 @@ function AdminDashboard() {
           {activeSection === 'delete' && <DeleteStudent />}
           {activeSection === 'update' && <UpdateStudent />}
           {activeSection === 'view' && <ViewStudents />}
+          {activeSection === 'viewMessage' && <ViewMessages />} {/* Add ViewMessages condition */}
         </div>
       </div>
     </>

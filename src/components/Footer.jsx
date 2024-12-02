@@ -6,23 +6,7 @@ export default function Footer() {
     <div className="w-full text-center h-auto bottom-0 bg-footerBackground text-footerText p-4">
       {/* Footer Main Row */}
       <div className="flex flex-col md:flex-row items-center justify-between md:space-x-8 space-y-4 md:space-y-0">
-        {/* Subscription Section */}
-        <div className="flex flex-col items-center md:items-start ">
-          <h5 className="font-bold text-white">Subscribe to our Newsletter</h5>
-          <form className="flex mt-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-2 rounded-l-md bg-white text-[#FFFFFF] outline-none"
-            />
-            <button
-              type="submit"
-              className="p-2 rounded-r-md bg-[#00594C] text-[#FFFFFF] font-bold"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+        
 
         {/* Copyright Section */}
         <div className="text-center bg-[#00332A] text-[#FFFFFF] p-2 rounded-md">

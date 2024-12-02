@@ -9,6 +9,7 @@ import ViewStudents from './ViewStudents';
 import ContactUs from './ContactUs';
 import Login from './Login';
 import AboutUs from './AboutUs';
+import ViewMessages from './ViewMessages'; // Import ViewMessages
 
 export default function Navbar() {
   const location = useLocation();
@@ -39,6 +40,7 @@ export default function Navbar() {
           <Route path="delete" element={<DeleteStudent />} />
           <Route path="update" element={<UpdateStudent />} />
           <Route path="view" element={<ViewStudents />} />
+          <Route path="viewMessage" element={<ViewMessages />} /> 
         </Route>
       </Routes>
     </>

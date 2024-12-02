@@ -2,8 +2,6 @@
 import React from 'react';
 
 function Sidebar({ isOpen, onToggle, onLogout, onSelectSection }) {
-    
-    
   return (
     <div className={`bg-navigationBar text-bodyText fixed top-0 left-0 transition-all ${isOpen ? 'w-64' : 'w-20'} border 
      border-iconsAndBorders rounded-lg`}
@@ -36,6 +34,12 @@ function Sidebar({ isOpen, onToggle, onLogout, onSelectSection }) {
           className="block p-4 w-full text-left hover:bg-footerBackground text-bodyText text-sm"
         >
           View Students
+        </button>
+        <button
+          onClick={() => onSelectSection('viewMessage')} // Add this line
+          className="block p-4 w-full text-left hover:bg-footerBackground text-bodyText text-sm"
+        >
+          View Messages
         </button>
         <button
           onClick={onLogout}
