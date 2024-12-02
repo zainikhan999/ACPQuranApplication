@@ -8,31 +8,6 @@ import { Link } from 'react-router-dom';
 import TestimonialSlider from './TestimonialSlider';
 
 export default function Home() {
-  // Array for 4 cards
-
-  const fourCardsData = [
-    {
-      heading: "Tajweed",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxPTXAed-qgcCVasHFAc2N77qP06KrlV4rA&s",
-      description: "Description for Tajweed",
-    },
-    {
-      heading: "Tafseer",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxPTXAed-qgcCVasHFAc2N77qP06KrlV4rA&s",
-      description: "Description for Tafseer",
-    },
-    {
-      heading: "Quran Recitation",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxPTXAed-qgcCVasHFAc2N77qP06KrlV4rA&s",
-      description: "Description for Quran Recitation",
-    },
-    {
-      heading: "Arabic Language",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxPTXAed-qgcCVasHFAc2N77qP06KrlV4rA&s",
-      description: "Description for Arabic Language",
-    },
-  ];
-
   // Array for 3 cards
   const threeCardsData = [
     {

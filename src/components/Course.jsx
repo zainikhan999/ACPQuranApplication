@@ -3,7 +3,6 @@ import Herosection from './Herosection'
 import Section from './Section'
 import Image from './Image'
 import Cardscombo from './Cardscombo'
-import { Link } from 'react-router-dom'
 export default function Course() {
   const threeCardsData = [
     {
