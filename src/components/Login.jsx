@@ -17,6 +17,7 @@ export default function Login() {
     axios
       .post('http://localhost:3001/login', { username, password })
       .then((response) => {
+
         const { message, userType } = response.data;
         console.log('Login Response:', response.data);
 
