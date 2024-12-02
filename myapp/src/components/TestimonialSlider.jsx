@@ -38,7 +38,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto p-4 border rounded-lg shadow-lg border-iconsAndBorders mb-9">
+    <div className="w-[80%] mx-auto p-4 border rounded-lg shadow-lg border-iconsAndBorders ">
       <div className="text-center mb-2">
         <p className="italic text-white-700 text-xl"> 
           "{testimonials[current].text}"
