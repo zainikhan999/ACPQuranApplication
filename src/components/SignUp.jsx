@@ -138,6 +138,7 @@ export default function SignUp() {
             </div>
 
             <div>
+
               <label className="block text-black mb-2">Contact No.</label>
               <input
                 type="text"

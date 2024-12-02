@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 function Sidebar({ isOpen, onToggle, onLogout, onSelectSection }) {

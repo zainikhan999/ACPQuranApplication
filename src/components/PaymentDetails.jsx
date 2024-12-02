@@ -157,3 +157,4 @@ function PaymentDetails({ purchasedCourses }) {
 
 export default PaymentDetails;
 
+
