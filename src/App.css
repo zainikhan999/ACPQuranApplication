@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+}
+body,html{
+  /* background-color:#004D40 ; */
+  background-color: #004D40;
+  color: #FFFFFF;
+}
+ h1
+ {
+   font-size: 40px;
+   color: #FFD54F;
+ }
+
+ h2{
+  font-size:20px;
+  color: #A7FFEB;
+ }
+
+p{
+  color: #FFFFFF;
+}
+ 
+ li{
+  font-size: 20px;
+  color: #FFFFFF;
+ }
