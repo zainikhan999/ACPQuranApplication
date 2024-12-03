@@ -72,7 +72,7 @@ export default function SignUp() {
   return (
     <>
       <Herosection imageUrl="/HomePage.png" height="h-[200px]">
-        <h1 className="text-white text-3xl">Sign Up</h1>
+        <h1>Sign Up</h1>
       </Herosection>
       <div className="flex items-center justify-center h-screen bg-background">
         <div className="max-w-md w-full p-8 border border-iconsAndBorders rounded-lg shadow-lg bg-white">
