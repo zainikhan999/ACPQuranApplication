@@ -3,7 +3,7 @@ import React from 'react';
 
 function Sidebar({ isOpen, onToggle, onLogout, onSelectSection }) {
   return (
-    <div className={`bg-navigationBar text-bodyText fixed top-0 left-0 transition-all ${isOpen ? 'w-64' : 'w-20'} border 
+    <div className={`bg-navigationBar text-bodyText sticky top-30 left-0 transition-all ${isOpen ? 'w-64' : 'w-20'} border 
      border-iconsAndBorders rounded-lg`}
      style={{ height: 'calc(100vh - 4rem)' }}
      >

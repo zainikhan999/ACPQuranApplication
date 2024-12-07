@@ -14,8 +14,7 @@ export default function Login() {
     event.preventDefault();
     setErrorMessage(''); // Clear any previous error messages
 
-    axios
-      .post('http://localhost:3001/login', { username, password })
+    axios.post('http://localhost:3001/login', { username, password })
       .then((response) => {
 
         const { message, userType } = response.data;

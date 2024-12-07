@@ -32,7 +32,7 @@ function AdminDashboard() {
         />
 
         {/* Main content area */}
-        <div className={`flex-1 p-6 transition-all ${sidebarOpen ? 'ml-64' : 'ml-20'}`}>
+        <div className={`flex-1 p-6 transition-all ${sidebarOpen ? 'ml-50' : 'ml-20'}`}>
           <h1 className="text-headings font-semibold text-2xl mb-4">Welcome to the Admin Dashboard</h1>
           
           {/* Conditional rendering based on active section */}

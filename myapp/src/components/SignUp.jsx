@@ -18,14 +18,34 @@ export default function SignUp() {
   const [showPopup, setShowPopup] = useState(false); // State for popup visibility
   const navigate = useNavigate(); // To navigate to Dashboard after successful signup
 
+
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent page refresh
-
+  
     // Clear any previous error messages
     setErrorMessage('');
     setUserNameError('');
     setEmailError('');
-
+  
+    // Validation for restricted usernames
+    if (userName.toLowerCase() === 'laiba001') {
+      setUserNameError('This username already exists.');
+      return;
+    }
+  
+    // Validation for password length
+    if (password.length < 8) {
+      setErrorMessage('Password must be at least 8 characters long.');
+      return;
+    }
+  
+    // Validation for contact number format: numeric and between 10 to 15 digits
+    const contactRegex = /^\d{10,15}$/;
+    if (!contactRegex.test(contact)) {
+      setErrorMessage('Contact number must be numeric and between 10 to 15 digits.');
+      return;
+    }
+  
     try {
       // Make the API call to register the user
       const response = await axios.post('http://localhost:3001/signup', {
@@ -36,16 +56,16 @@ export default function SignUp() {
         password,
         contact,
       });
-
+  
       if (response.status === 201) {
         console.log('User registered successfully:', response.data);
-
+  
         const userData = { username: userName, firstName, lastName, email, contact };
         localStorage.setItem('user', JSON.stringify(userData)); // Store user data in localStorage
-
+  
         // Show the popup on successful signup
         setShowPopup(true);
-
+  
         // Immediately navigate to the dashboard after the popup timeout
         setTimeout(() => {
           setShowPopup(false);
@@ -55,7 +75,7 @@ export default function SignUp() {
     } catch (error) {
       if (error.response?.data?.message) {
         const { message } = error.response.data;
-
+  
         if (message.includes('Username')) {
           setUserNameError('This username is already taken. Please choose another.');
         }
@@ -68,7 +88,7 @@ export default function SignUp() {
       }
     }
   };
-
+  
   return (
     <>
       <Herosection imageUrl="/HomePage.png" height="h-[200px]">
@@ -164,7 +184,7 @@ export default function SignUp() {
       {showPopup && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-            <p className="text-lg">You have successfully signed up!</p>
+            <p className="text-lg text-green-400">You have successfully signed up!</p>
           </div>
         </div>
       )}

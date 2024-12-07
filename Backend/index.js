@@ -1,4 +1,3 @@
-
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -16,7 +15,7 @@ app.use(express.json());
 const MONGO_URI = 'mongodb+srv://QuranApp:EOqMP8cpjuWKdzEx@cluster0.reske.mongodb.net/QuranApp?retryWrites=true&w=majority';
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB using Mongoose');
     })
@@ -32,9 +31,7 @@ app.post('/login', async (req, res) => {
     console.log(`Login attempt for username: ${username}`);
 
     try {
-        // Check if the user is an admin (this could be based on a special admin username)
-        // You could check a hardcoded admin username or email here
-        if (username === 'laiba001') {  // Replace 'adminUser' with your actual admin username
+        if (username === 'laiba001') {  
             // If admin username is entered, do a check
             console.log('Admin login attempt');
 
@@ -88,7 +85,9 @@ app.post('/signup', async (req, res) => {
     const lowerCaseUserName = userName.toLowerCase();
     const lowerCaseEmail = email.toLowerCase();
 
+
     try {
+        // Check if username or email already exists
         const existingUser = await User.findOne({
             $or: [{ userName: lowerCaseUserName }, { email: lowerCaseEmail }],
         });
@@ -98,8 +97,10 @@ app.post('/signup', async (req, res) => {
             return res.status(400).json({ message: `${conflictField} already exists` });
         }
 
+        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        // Create a new user
         const newUser = new User({
             userName: lowerCaseUserName,
             firstName,
@@ -116,6 +117,7 @@ app.post('/signup', async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
+
 
 // Route to get user profile details
 app.get('/users', async (req, res) => {
@@ -188,32 +190,11 @@ app.get('/payments/:username', async (req, res) => {
         return res.status(500).json({ message: 'Error fetching payments' });
     }
 });
+// -----------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------
 //------------------------------------ADMIN PART--------------------------------------------------------
 //------------------------------------------------------------------------------------------------------
-// User schema
-// const userSchema = new mongoose.Schema({
-//     username: { type: String, required: true, unique: true },
-//     firstName: { type: String, required: true },
-//     lastName: { type: String, required: true },
-//     email: { type: String, required: true, unique: true },
-//     password: { type: String, required: true },
-//     contact: { type: String, required: true },
-//     createdAt: { type: Date, default: Date.now },
-// });
 
-// const User = mongoose.model('User', userSchema);
-
-// Payment schema
-// const paymentSchema = new mongoose.Schema({
-//     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to User
-//     courseName: { type: String },
-//     coursePrice: { type: Number },
-//     creditCardNumber: { type: String },
-//     createdAt: { type: Date, default: Date.now },
-// });
-
-// const Payment = mongoose.model('Payment', paymentSchema); // Payments collection
 
 // Contact schema
 const contactSchema = new mongoose.Schema({
@@ -261,29 +242,29 @@ app.get('/get-contacts', async (req, res) => {
 
 // Add student endpoint
 app.post('/add-student', async (req, res) => {
-    const { username, firstName, lastName, email, password, contact } = req.body;
+    const { userName, firstName, lastName, email, password, contact } = req.body;
 
-    if (!username || !firstName || !lastName || !email || !password || !contact) {
+    if (!userName || !firstName || !lastName || !email || !password || !contact) {
         return res.status(400).json({ message: "All fields are required" });
     }
 
-    const lowerCaseUsername = username.toLowerCase();
+    const lowerCaseUsername = userName.toLowerCase();
     const lowerCaseEmail = email.toLowerCase();
 
     try {
         const existingUser = await User.findOne({
-            $or: [{ username: lowerCaseUsername }, { email: lowerCaseEmail }],
+            $or: [{ userName: lowerCaseUsername }, { email: lowerCaseEmail }],
         });
 
         if (existingUser) {
-            const conflictField = existingUser.username === lowerCaseUsername ? 'Username' : 'Email';
+            const conflictField = existingUser.userName === lowerCaseUsername ? 'Username' : 'Email';
             return res.status(400).json({ message: `${conflictField} already exists` });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = new User({
-            username: lowerCaseUsername,
+            userName: lowerCaseUsername,
             firstName,
             lastName,
             email: lowerCaseEmail,

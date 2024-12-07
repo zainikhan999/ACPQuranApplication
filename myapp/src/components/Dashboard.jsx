@@ -85,7 +85,7 @@ function Dashboard() {
 
               {/* Conditional rendering based on active section */}
               {activeSection === 'dashboard' && (
-                <CourseList purchasedCourses={purchasedCourses} onPurchase={handlePurchaseCourse} />
+                <CourseList onPurchase={handlePurchaseCourse} />
               )}
               {activeSection === 'profile' && (
         <ProfileDetails

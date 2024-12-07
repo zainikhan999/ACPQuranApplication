@@ -34,7 +34,7 @@ function ContactUs() {
   return (
     <>
       <HeroSection imageUrl="/HomePage.png" height="h-[150px]">
-        <h1 className="text-yellow-500 text-4xl font-bold">Contact Us</h1>
+        <h1>Contact Us</h1>
       </HeroSection>
       <div className="flex items-start justify-center h-screen bg-background p-9 mt-9">
         <div className="max-w-md w-full p-8 border border-iconsAndBorders rounded-lg shadow-lg bg-white">
