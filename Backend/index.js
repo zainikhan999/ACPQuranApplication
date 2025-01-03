@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 
 const mongoose = require('mongoose');
@@ -12,8 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Configuration
-const MONGO_URI = 'mongodb+srv://QuranApp:EOqMP8cpjuWKdzEx@cluster0.reske.mongodb.net/QuranApp?retryWrites=true&w=majority';
-
+const MONGO_URI = process.env.MONGO_URI
 // Connect to MongoDB using Mongoose
 mongoose.connect(MONGO_URI)
     .then(() => {
