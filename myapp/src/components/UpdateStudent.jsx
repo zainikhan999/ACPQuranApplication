@@ -140,7 +140,7 @@ function UpdateStudent() {
     }
 
     try {
-      const response = await axios.get(`http://localhost:3001/get-student/${email}`);
+      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/get-student/${email}`);
       setStudentData(response.data);
       setError(''); // Clear any previous errors
     } catch (err) {
@@ -159,7 +159,7 @@ function UpdateStudent() {
     const { firstName, lastName, contact } = studentData;
 
     try {
-      const response = await axios.put(`http://localhost:3001/update-student/${email}`, {
+      const response = await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/update-student/${email}`, {
         firstName,
         lastName,
         contact,

@@ -7,7 +7,7 @@ function ViewStudent() {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/get-students');
+      const response = await axios.get('${import.meta.env.VITE_REACT_APP_BACKEND_URL}/get-students');
       setStudents(response.data);
       setError(''); // Clear any previous errors
     } catch (err) {
@@ -64,7 +64,7 @@ const ViewStudents = () => {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/get-students');
+                const response = await axios.get('${import.meta.env.VITE_REACT_APP_BACKEND_URL}/get-students');
                 setStudents(response.data);
             } catch (err) {
                 setError('Error fetching students');

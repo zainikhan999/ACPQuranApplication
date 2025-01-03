@@ -14,7 +14,7 @@ export default function Login() {
     event.preventDefault();
     setErrorMessage(''); // Clear any previous error messages
 
-    axios.post('http://localhost:3001/login', { username, password })
+    axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/login`, { username, password })
       .then((response) => {
 
         const { message, userType } = response.data;

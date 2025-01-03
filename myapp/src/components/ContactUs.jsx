@@ -21,7 +21,7 @@ function ContactUs() {
     event.preventDefault();
     if (formData.studentName && formData.email && formData.message) {
       try {
-        const response = await axios.post('http://localhost:3001/add-contact', formData);
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/add-contact`, formData);
         console.log(response.data.message); // Log success message
         setSubmittedMessages([...submittedMessages, formData]);
         setFormData({ studentName: '', email: '', message: '' }); // Reset form after submission

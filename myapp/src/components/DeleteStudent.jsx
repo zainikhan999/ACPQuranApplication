@@ -12,7 +12,7 @@ function DeleteStudent() {
   // Fetch students from the backend
   const fetchStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/get-students');
+      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/get-students`);
       setStudents(response.data);
     } catch (error) {
       console.error('Error fetching students:', error);
@@ -30,7 +30,7 @@ function DeleteStudent() {
     }
 
     try {
-      await axios.delete(`http://localhost:3001/delete-student/${email}`);
+      await axios.delete(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/delete-student/${email}`);
       setErrorMessage('Student deleted successfully!');
       setEmail('');
       // Refetch the students
