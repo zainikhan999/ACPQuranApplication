@@ -8,7 +8,7 @@ function ViewMessages() {
   const fetchContacts = async () => {
     try {
       console.log('Fetching contacts...'); // Track fetching
-      const response = await axios.get('${import.meta.env.VITE_REACT_APP_BACKEND_URL}/get-contacts');
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/get-contacts`);
       setContacts(response.data);
       setError(''); // Clear any previous errors
       console.log('Contacts fetched successfully:', response.data); // Track successful fetch

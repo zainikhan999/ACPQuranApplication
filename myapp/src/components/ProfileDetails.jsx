@@ -16,7 +16,7 @@ function ProfileDetails({ isOpen, onLogout, selectedSection }) {
       if (fetchedUsername) {
         console.log('Fetching profile data from API...');
         axios
-          .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/users?userName=${fetchedUsername}`)
+          .get(`${process.env.REACT_APP_BACKEND_URL}/users?userName=${fetchedUsername}`)
           .then((response) => {
             if (response.data) {
               console.log('API response:', response.data);

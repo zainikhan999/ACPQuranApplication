@@ -19,7 +19,7 @@ function PaymentDetails({ purchasedCourses }) {
     if (!currentUser) return;
 
     try {
-      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/payments/${currentUser.username}`);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/payments/${currentUser.username}`);
       setSubmittedPayments(response.data);
       // Get already selected courses
       const selectedCourses = response.data.map(payment => payment.courseName);
@@ -60,7 +60,7 @@ function PaymentDetails({ purchasedCourses }) {
     };
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/register-payment`, paymentData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register-payment`, paymentData);
       setMessage(response.data.message);
       // Fetch updated payments from the server after submitting
       fetchPayments();

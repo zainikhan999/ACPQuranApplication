@@ -28,7 +28,7 @@ export default function AddStudent() {
     };
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/add-student`, studentData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/add-student`, studentData);
       console.log("Add Student Response:", response.data);
 
       // Show success alert

@@ -22,7 +22,7 @@ function Dashboard() {
       if (user && user.username) {  // Ensure 'username' exists
         try {
           // Fetch full user data from backend using username
-          const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/users?userName=${user.username.toLowerCase()}`);
+          const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users?userName=${user.username.toLowerCase()}`);
           if (response.data) {
             setUserData(response.data); // Set full user data
           } else {
